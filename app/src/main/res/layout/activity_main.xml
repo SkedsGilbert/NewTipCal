@@ -82,7 +82,52 @@
         android:layout_centerHorizontal="true"
         android:progress="15" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/finalBillText"
+        android:id="@+id/finalBillTextView"
+        android:layout_below="@+id/tipSeekBar"
+        android:layout_alignLeft="@+id/tipTextView"
+        android:layout_alignStart="@+id/tipTextView" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.00"
+        android:id="@+id/finalBillAmountTextView"
+        android:layout_below="@+id/finalBillTextView"
+        android:layout_alignLeft="@+id/finalBillTextView"
+        android:layout_alignStart="@+id/finalBillTextView"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Waitress Name"
+        android:id="@+id/waitressNameTextView"
+        android:layout_below="@+id/finalBillAmountTextView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="27dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/waitressScore"
+        android:id="@+id/waitressScoreTextView"
+        android:layout_alignTop="@+id/waitressNameTextView"
+        android:layout_alignRight="@+id/tipAmountTextView"
+        android:ems="3"
+        android:layout_alignEnd="@+id/tipAmountTextView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/waitressScoreNum"
+        android:id="@+id/waitressScoreNumTextView"
+        android:layout_alignTop="@+id/waitressScoreTextView"
+        android:layout_toRightOf="@+id/waitressScoreTextView" />
 
 
 </RelativeLayout>
