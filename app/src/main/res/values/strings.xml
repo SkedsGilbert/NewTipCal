@@ -9,5 +9,13 @@
     <string name="tipAmountText">Tip</string>
     <string name="adjustTipTextView">Adjust Tip</string>
     <string name="percentSign">%</string>
+    <string name="finalBillText">Final Bill</string>
+    <string name="waitressScore">Score: </string>
+    <string name="waitressScoreNum">0.0</string>
+    <string name="addWaiterInfo">Add Waiter</string>
+
+    <string-array name="waitressInfo">
+        <item>Waitress Name</item>
+    </string-array>
 
 </resources>
