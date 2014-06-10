@@ -2,16 +2,16 @@
 <pre-dex-items>
 
     <item
-        dex="C:\Development\AndroidStudio\TipCal\app\build\pre-dexed\debug\support-v4-19.0.1-977a6ff346bef81533503863beac10487a23b86e.jar"
-        jar="C:\Users\Gilbert Rodriguez\AppData\Local\Android\android-studio\sdk\extras\android\m2repository\com\android\support\support-v4\19.0.1\support-v4-19.0.1.jar"
-        jumboMode="false"
-        revision="19.0.3"
-        sha1="587da9a481ffd341d2fa091704489b89845ddacd"/>
-    <item
-        dex="C:\Development\AndroidStudio\TipCal\app\build\pre-dexed\debug\classes-28722f6242dec426a4f56ee2dfa5e4dde852d8a2.jar"
-        jar="C:\Development\AndroidStudio\TipCal\build\exploded-aar\com.android.support\appcompat-v7\19.0.1\classes.jar"
+        dex="C:\Users\Jsin\AndroidStudioProjects\NewTipCal\app\build\pre-dexed\debug\classes-2c55ec6288bbda94ee6a7543f1d32c921828e9dd.jar"
+        jar="C:\Users\Jsin\AndroidStudioProjects\NewTipCal\build\exploded-aar\com.android.support\appcompat-v7\19.0.1\classes.jar"
         jumboMode="false"
         revision="19.0.3"
         sha1="f71a6822470c9eb659d4f4a6cb57b780b35f058b"/>
+    <item
+        dex="C:\Users\Jsin\AndroidStudioProjects\NewTipCal\app\build\pre-dexed\debug\support-v4-19.0.1-d0100ec5947986fb348e5003fed03b91eff38a80.jar"
+        jar="C:\Users\Jsin\AppData\Local\Android\android-studio\sdk\extras\android\m2repository\com\android\support\support-v4\19.0.1\support-v4-19.0.1.jar"
+        jumboMode="false"
+        revision="19.0.3"
+        sha1="587da9a481ffd341d2fa091704489b89845ddacd"/>
 
 </pre-dex-items>

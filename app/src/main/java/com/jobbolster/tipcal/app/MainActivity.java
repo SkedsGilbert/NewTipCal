@@ -107,7 +107,7 @@ public class MainActivity extends ActionBarActivity {
         double tipFromText = Double.parseDouble(tvTipAmount.getText().toString()) * .01;
         double finalBill = billBeforeTip + (billBeforeTip * tipFromText);
         double amountToTip = finalBill - billBeforeTip;
-        
+
     }
 
 

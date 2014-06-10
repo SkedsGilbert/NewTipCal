@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/NewTipCal.iml" filepath="$PROJECT_DIR$/NewTipCal.iml" />
       <module fileurl="file://$PROJECT_DIR$/TipCal.iml" filepath="$PROJECT_DIR$/TipCal.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>

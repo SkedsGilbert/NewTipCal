@@ -13,6 +13,7 @@
     <string name="waitressScore">Score: </string>
     <string name="waitressScoreNum">0.0</string>
     <string name="addWaiterInfo">Add Waiter</string>
+    <string name="resetAll">Reset All</string>
 
     <string-array name="waitressInfo">
         <item>Waitress Name</item>
