@@ -6,6 +6,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
@@ -86,8 +87,9 @@ public class MainActivity extends ActionBarActivity {
         public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
 
             tipAmount = (sbAdjustTip.getProgress());
-            tvAmountToTip.setText(Integer.toString(tipAmount));
+            tvTipAmount.setText(Integer.toString(tipAmount));
             updateTipFinalBill();
+            System.out.println(tvAmountToTip);
 
         }
 
@@ -107,7 +109,19 @@ public class MainActivity extends ActionBarActivity {
         double tipFromText = Double.parseDouble(tvTipAmount.getText().toString()) * .01;
         double finalBill = billBeforeTip + (billBeforeTip * tipFromText);
         double amountToTip = finalBill - billBeforeTip;
+        tvAmountToTip.setText(String.format("%.02f",amountToTip));
+        tvFinalBill.setText(String.format("%.02f",finalBill));
+    }
 
+    private void setBttnOnClickListener(){
+        bttnResetAll.setOnClickListener(new Button.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                etBillBeforeTip.setText(String.format("%.02f",0.00));
+                sbAdjustTip.setProgress(15);
+            }
+        });
     }
 
 
@@ -128,5 +142,6 @@ public class MainActivity extends ActionBarActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+
     }
 }
