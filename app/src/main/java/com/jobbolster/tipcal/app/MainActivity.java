@@ -1,5 +1,6 @@
 package com.jobbolster.tipcal.app;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -89,7 +90,7 @@ public class MainActivity extends ActionBarActivity {
             tipAmount = (sbAdjustTip.getProgress());
             tvTipAmount.setText(Integer.toString(tipAmount));
             updateTipFinalBill();
-            System.out.println(tvAmountToTip);
+            System.out.println("Set progress " + tipAmount + "%");
 
         }
 
@@ -122,6 +123,11 @@ public class MainActivity extends ActionBarActivity {
                 sbAdjustTip.setProgress(15);
             }
         });
+    }
+
+    public void addWaiter(View view){
+        Intent intent = new Intent(this,AddWaiterActivity.class);
+        startActivity(intent);
     }
 
 
