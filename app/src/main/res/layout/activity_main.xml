@@ -107,9 +107,9 @@
         android:text="@string/waitressScore"
         android:id="@+id/waitressScoreTextView"
         android:ems="3"
-        android:layout_below="@+id/finalBillAmountTextView"
-        android:layout_toRightOf="@+id/finalBillTextView"
-        android:layout_marginTop="45dp" />
+        android:layout_marginTop="20dp"
+        android:layout_alignTop="@+id/spiWaitressNames"
+        android:layout_toRightOf="@+id/tipTextView" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -119,28 +119,15 @@
         android:layout_alignTop="@+id/waitressScoreTextView"
         android:layout_toRightOf="@+id/waitressScoreTextView" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/addWaiterInfo"
-        android:id="@+id/waitressInfoBttn"
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:onClick="addWaiter"/>
-
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/spinner"
-        android:layout_alignLeft="@+id/billEditText"
-        android:layout_alignStart="@+id/billEditText"
-        android:layout_above="@+id/waitressInfoBttn"
-        android:layout_alignRight="@+id/tipTextView"
-        android:layout_alignEnd="@+id/tipTextView"
-        android:entries="@array/waitressInfo"/>
+        android:id="@+id/spiWaitressNames"
+        android:entries="@array/waitressInfo"
+        android:layout_below="@+id/finalBillAmountTextView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/finalBillAmountTextView" />
 
     <Button
         android:layout_width="wrap_content"

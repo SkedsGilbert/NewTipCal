@@ -8,9 +8,11 @@ import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 
@@ -30,8 +32,11 @@ public class MainActivity extends ActionBarActivity {
     TextView tvFinalBill;
     TextView tvTipAmount;
     TextView tvAmountToTip;
+    TextView tvWaitressScore;
+    TextView tvWaitressScoreNum;
 
     SeekBar sbAdjustTip;
+    Spinner spiNameSelector;
 
     Button bttnResetAll;
 
@@ -52,6 +57,15 @@ public class MainActivity extends ActionBarActivity {
 
         tvTipAmount = (TextView) findViewById(R.id.tipPercentTextView);
         tvAmountToTip = (TextView) findViewById(R.id.tipAmountTextView);
+        tvWaitressScore = (TextView) findViewById(R.id.waitressScoreTextView);
+        tvWaitressScoreNum = (TextView) findViewById(R.id.waitressScoreNumTextView);
+        tvWaitressScore.setVisibility(View.INVISIBLE);
+        tvWaitressScoreNum.setVisibility(View.INVISIBLE);
+
+        //setupSpinner
+        spiNameSelector = (Spinner) findViewById(R.id.spiWaitressNames);
+        spinnerSetup();
+
 
         //Setup Buttons
         bttnResetAll = (Button) findViewById(R.id.resetAllBttn);
@@ -121,13 +135,29 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View view) {
                 etBillBeforeTip.setText(String.format("%.02f",0.00));
                 sbAdjustTip.setProgress(15);
+                tvWaitressScore.setVisibility(View.INVISIBLE);
+                tvWaitressScoreNum.setVisibility(View.INVISIBLE);
+                spiNameSelector.setSelection(0);
             }
         });
     }
 
-    public void addWaiter(View view){
-        Intent intent = new Intent(this,AddWaiterActivity.class);
-        startActivity(intent);
+    private void spinnerSetup(){
+        spiNameSelector.setOnItemSelectedListener(new Spinner.OnItemSelectedListener(){
+
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (spiNameSelector.getSelectedItem().equals("Jason Rodriguez")){
+                    tvWaitressScore.setVisibility(View.VISIBLE);
+                    tvWaitressScoreNum.setVisibility(View.VISIBLE);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
     }
 
 

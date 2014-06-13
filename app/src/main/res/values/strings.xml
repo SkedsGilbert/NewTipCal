@@ -17,6 +17,7 @@
 
     <string-array name="waitressInfo">
         <item>Add Waiter</item>
+        <item>Jason Rodriguez</item>
     </string-array>
 
     <string name="title_activity_add_waiter">AddWaiterActivity</string>
