@@ -16,7 +16,7 @@
     <string name="resetAll">Reset All</string>
 
     <string-array name="waitressInfo">
-        <item>Waitress Name</item>
+        <item>Add Waiter</item>
     </string-array>
 
     <string name="title_activity_add_waiter">AddWaiterActivity</string>
