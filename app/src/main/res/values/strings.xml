@@ -15,8 +15,19 @@
     <string name="addWaiterInfo">Add Waiter</string>
     <string name="resetAll">Reset All</string>
 
+    <string-array name="restaurantInfo">
+        <item>Select Restaurant</item>
+        <item>Apple Bee\'s</item>
+    </string-array>
+
+    <string-array name="restaurantLocalInfo">
+        <item>Select Location</item>
+        <item>Rufe Snow</item>
+        <item>Saginaw Main St.</item>
+    </string-array>
+
     <string-array name="waitressInfo">
-        <item>Add Waiter</item>
+        <item>Select Waiter</item>
         <item>Jason Rodriguez</item>
     </string-array>
 

@@ -107,27 +107,17 @@
         android:text="@string/waitressScore"
         android:id="@+id/waitressScoreTextView"
         android:ems="3"
-        android:layout_marginTop="20dp"
-        android:layout_alignTop="@+id/spiWaitressNames"
-        android:layout_toRightOf="@+id/tipTextView" />
+        android:layout_alignTop="@+id/waitressScoreNumTextView"
+        android:layout_toRightOf="@+id/finalBillAmountTextView" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/waitressScoreNum"
         android:id="@+id/waitressScoreNumTextView"
-        android:layout_alignTop="@+id/waitressScoreTextView"
-        android:layout_toRightOf="@+id/waitressScoreTextView" />
-
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/spiWaitressNames"
-        android:entries="@array/waitressInfo"
+        android:layout_marginTop="28dp"
         android:layout_below="@+id/finalBillAmountTextView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/finalBillAmountTextView" />
+        android:layout_toRightOf="@+id/waitressScoreTextView" />
 
     <Button
         android:layout_width="wrap_content"
