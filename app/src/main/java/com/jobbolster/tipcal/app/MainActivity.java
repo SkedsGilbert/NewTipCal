@@ -39,6 +39,7 @@ public class MainActivity extends ActionBarActivity {
     Spinner spiNameSelector;
 
     Button bttnResetAll;
+    Button bttnAddWaiter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,12 +64,13 @@ public class MainActivity extends ActionBarActivity {
         tvWaitressScoreNum.setVisibility(View.INVISIBLE);
 
         //setupSpinner
-        spiNameSelector = (Spinner) findViewById(R.id.spiWaitressNames);
-        spinnerSetup();
+//        spiNameSelector = (Spinner) findViewById(R.id.spiWaitressNames);
+//        spinnerSetup();
 
 
         //Setup Buttons
         bttnResetAll = (Button) findViewById(R.id.resetAllBttn);
+        bttnAddWaiter = (Button) findViewById(R.id.openWaiterInfoBttn);
         setBttnOnClickListener();
     }
 
@@ -137,7 +139,15 @@ public class MainActivity extends ActionBarActivity {
                 sbAdjustTip.setProgress(15);
                 tvWaitressScore.setVisibility(View.INVISIBLE);
                 tvWaitressScoreNum.setVisibility(View.INVISIBLE);
-                spiNameSelector.setSelection(0);
+//                spiNameSelector.setSelection(0);
+            }
+        });
+
+        bttnAddWaiter.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,WaiterInfo.class);
+                startActivity(intent);
             }
         });
     }

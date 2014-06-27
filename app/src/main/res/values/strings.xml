@@ -20,7 +20,7 @@
         <item>Apple Bee\'s</item>
     </string-array>
 
-    <string-array name="restaurantLocalInfo">
+    <string-array name="restaurantLocaleInfo">
         <item>Select Location</item>
         <item>Rufe Snow</item>
         <item>Saginaw Main St.</item>
@@ -33,5 +33,6 @@
 
     <string name="title_activity_add_waiter">AddWaiterActivity</string>
     <string name="waiterName">Waiter Name</string>
+    <string name="open_waiterInfo_bttn">Add Waiter</string>
 
 </resources>

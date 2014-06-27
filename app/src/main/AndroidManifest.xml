@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AddWaiterActivity"
+            android:name=".WaiterInfo"
             android:label="@string/title_activity_add_waiter" >
         </activity>
     </application>
