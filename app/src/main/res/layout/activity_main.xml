@@ -108,7 +108,8 @@
         android:id="@+id/waitressScoreTextView"
         android:ems="3"
         android:layout_alignTop="@+id/waitressScoreNumTextView"
-        android:layout_toRightOf="@+id/finalBillAmountTextView" />
+        android:layout_alignRight="@+id/finalBillTextView"
+        android:layout_alignEnd="@+id/finalBillTextView" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -129,6 +130,17 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test"
+        android:id="@+id/testBttn"
+        android:layout_below="@+id/waitressScoreTextView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="waiter_info_layout"/>
 
 
 </RelativeLayout>
