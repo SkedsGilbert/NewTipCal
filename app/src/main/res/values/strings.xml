@@ -31,8 +31,9 @@
         <item>Jason Rodriguez</item>
     </string-array>
 
-    <string name="title_activity_add_waiter">AddWaiterActivity</string>
+    <string name="title_activity_add_waiter">Add Waiter Info</string>
     <string name="waiterName">Waiter Name</string>
     <string name="open_waiterInfo_bttn">Add Waiter</string>
+    <string name="split_bill">Split Bill</string>
 
 </resources>
