@@ -62,9 +62,9 @@ public class MainActivity extends ActionBarActivity {
         tvWaitressScore.setVisibility(View.INVISIBLE);
         tvWaitressScoreNum.setVisibility(View.INVISIBLE);
 
-        //setupSpinner
-        spiNameSelector = (Spinner) findViewById(R.id.spiWaitressNames);
-        spinnerSetup();
+//        //setupSpinner
+//        spiNameSelector = (Spinner) findViewById(R.id.spiWaitressNames);
+//        spinnerSetup();
 
 
         //Setup Buttons
