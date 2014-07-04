@@ -140,7 +140,7 @@
         android:layout_below="@+id/waitressScoreTextView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:onClick="waiter_info_layout"/>
+        android:onClick="startWaiterInfoActivity" />
 
 
 </RelativeLayout>

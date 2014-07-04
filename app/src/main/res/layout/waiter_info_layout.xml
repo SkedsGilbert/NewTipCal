@@ -10,20 +10,21 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/addResturantName" >
+        android:id="@+id/addRestaurantName" >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="@string/resturantNameTextView"
-            android:id="@+id/resturantNameTextView" />
+            android:text="@string/restaurantNameTextView"
+            android:id="@+id/restaurantNameTextView" />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/resturantNameEditText"
-            android:layout_weight="1" />
+            android:id="@+id/restaurantNameEditText"
+            android:inputType="textCapWords"
+            android:layout_weight="0.70" />
     </LinearLayout>
 
     <LinearLayout
@@ -43,6 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/locationEditText"
+            android:inputType="textCapWords"
             android:layout_weight="3.01"/>
 
     </LinearLayout>
@@ -64,8 +66,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/serverNameEditText"
-            android:layout_weight="5.70"
-            android:inputType="textPersonName" />
+            android:inputType="textCapWords"
+            android:layout_weight="5.70" />
 
     </LinearLayout>
 
@@ -76,10 +78,17 @@
         android:text="@string/add_server_bttn"
         android:layout_marginBottom="25dp" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/resetDB"
+        android:text="@string/reset_DB"
+        android:onClick="resetTheDB" />
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/listView" />
+        android:id="@+id/serverListView" />
 
 
 </LinearLayout>

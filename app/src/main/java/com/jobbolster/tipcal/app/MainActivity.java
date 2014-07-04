@@ -39,6 +39,10 @@ public class MainActivity extends ActionBarActivity {
     Spinner spiNameSelector;
 
     Button bttnResetAll;
+    Button bttnTest;
+
+    //Setup DB
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +74,13 @@ public class MainActivity extends ActionBarActivity {
         //Setup Buttons
         bttnResetAll = (Button) findViewById(R.id.resetAllBttn);
         setBttnOnClickListener();
+
+        bttnTest = (Button) findViewById(R.id.testBttn);
+        setBttnOnClickListener();
+
+
     }
+
 
     private TextWatcher billBeforeTipListener = new TextWatcher() {
         @Override
@@ -140,6 +150,7 @@ public class MainActivity extends ActionBarActivity {
                 spiNameSelector.setSelection(0);
             }
         });
+
     }
 
     private void spinnerSetup(){
@@ -158,6 +169,12 @@ public class MainActivity extends ActionBarActivity {
 
             }
         });
+    }
+
+    public void startWaiterInfoActivity(View view){
+        System.out.println(view);
+        Intent i = new Intent(this,WaiterInfo.class);
+        startActivity(i);
     }
 
 
@@ -180,4 +197,6 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
 
     }
+
+
 }
