@@ -31,9 +31,12 @@
         <item>Jason Rodriguez</item>
     </string-array>
 
-    <string name="title_activity_add_waiter">Add Waiter Info</string>
+    <string name="title_activity_add_waiter">AddWaiterActivity</string>
     <string name="waiterName">Waiter Name</string>
-    <string name="open_waiterInfo_bttn">Add Waiter</string>
-    <string name="split_bill">Split Bill</string>
+    <string name="restaurantNameTextView">Restaurant Name</string>
+    <string name="server_name">Server Name</string>
+    <string name="add_server_bttn">Add Server</string>
+    <string name="reset_DB">Reset DB</string>
+
 
 </resources>

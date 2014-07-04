@@ -87,7 +87,6 @@
         android:layout_height="wrap_content"
         android:text="@string/finalBillText"
         android:id="@+id/finalBillTextView"
-        android:layout_marginTop="25dp"
         android:layout_below="@+id/tipSeekBar"
         android:layout_alignLeft="@+id/tipTextView"
         android:layout_alignStart="@+id/tipTextView" />
@@ -108,15 +107,17 @@
         android:text="@string/waitressScore"
         android:id="@+id/waitressScoreTextView"
         android:ems="3"
-        android:layout_above="@+id/resetAllBttn"
-        android:layout_toRightOf="@+id/finalBillAmountTextView" />
+        android:layout_alignTop="@+id/waitressScoreNumTextView"
+        android:layout_alignRight="@+id/finalBillTextView"
+        android:layout_alignEnd="@+id/finalBillTextView" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/waitressScoreNum"
         android:id="@+id/waitressScoreNumTextView"
-        android:layout_alignTop="@+id/waitressScoreTextView"
+        android:layout_marginTop="28dp"
+        android:layout_below="@+id/finalBillAmountTextView"
         android:layout_toRightOf="@+id/waitressScoreTextView" />
 
     <Button
@@ -134,20 +135,12 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/open_waiterInfo_bttn"
-        android:id="@+id/openWaiterInfoBttn"
-        android:layout_above="@+id/resetAllBttn"
+        android:text="Test"
+        android:id="@+id/testBttn"
+        android:layout_below="@+id/waitressScoreTextView"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/split_bill"
-        android:id="@+id/splitBillTextView"
-        android:layout_alignTop="@+id/finalBillTextView"
-        android:layout_alignRight="@+id/adjustTipTextView"
-        android:layout_alignEnd="@+id/adjustTipTextView" />
+        android:layout_alignParentStart="true"
+        android:onClick="waiter_info_layout"/>
 
 
 </RelativeLayout>
