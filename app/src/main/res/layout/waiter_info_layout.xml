@@ -71,6 +71,27 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/testAutoComp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test AutoComplete"
+            android:id="@+id/testAutoCompTextView" />
+
+        <AutoCompleteTextView
+            android:layout_width="301dp"
+            android:layout_height="wrap_content"
+            android:text="New AutoCompleteTextView"
+            android:id="@+id/autoCompleteTextView"
+            android:layout_gravity="center_horizontal" />
+
+    </LinearLayout>
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

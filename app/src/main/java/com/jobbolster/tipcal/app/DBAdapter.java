@@ -145,6 +145,8 @@ public class DBAdapter {
         return c;
     }
 
+    //
+
     //Return all resturant names for autocomplete
     public String[] getAllResturantNames(){
         Cursor cursor = this.db.query(DATABASE_TABLE,new String[]{KEY_RESTAURANT_NAME},null,
