@@ -7,6 +7,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -23,8 +25,8 @@ public class WaiterInfo extends ActionBarActivity{
     private String restaurantLocale;
     private String serverName;
 
-    EditText etRestaurantName;
-    EditText etRestaurantLocale;
+    AutoCompleteTextView etRestaurantName;
+    AutoCompleteTextView etRestaurantLocale;
     EditText etServerName;
 
     Button bttnAddServer;
@@ -40,8 +42,8 @@ public class WaiterInfo extends ActionBarActivity{
         setContentView(R.layout.waiter_info_layout);
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
-        etRestaurantName = (EditText) findViewById(R.id.restaurantNameEditText);
-        etRestaurantLocale = (EditText) findViewById(R.id.locationEditText);
+        etRestaurantName = (AutoCompleteTextView) findViewById(R.id.restaurantNameEditText);
+        etRestaurantLocale = (AutoCompleteTextView) findViewById(R.id.locationEditText);
         etServerName = (EditText) findViewById(R.id.serverNameEditText);
 
 
@@ -49,11 +51,18 @@ public class WaiterInfo extends ActionBarActivity{
         bttnReset = (Button) findViewById(R.id.resetDB);
         setBttnOnClickListener();
 
+
         openDB();
         populateListViewFromDB();
+        
+        createAutoPopulate();
 
+    }
 
-
+    private void createAutoPopulate() {
+        String[] restaurantNames = serverDB.getAllResturantNames();
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.list_item,restaurantNames);
+        etRestaurantName.setAdapter(adapter);
     }
 
     private void populateListViewFromDB() {
@@ -96,6 +105,7 @@ public class WaiterInfo extends ActionBarActivity{
                 if(checkEmptyFields(restaurantName,restaurantLocale,serverName)== true) {
                     serverDB.insertRow(restaurantName, restaurantLocale, serverName);
                     populateListViewFromDB();
+                    createAutoPopulate();
                     clearText();
                 }
 
