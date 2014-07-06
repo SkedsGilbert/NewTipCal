@@ -4,12 +4,14 @@ package com.jobbolster.tipcal.app;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.Toast;
 
 
 /**
@@ -85,14 +87,19 @@ public class WaiterInfo extends ActionBarActivity{
 
             @Override
             public void onClick(View view) {
-                restaurantName = etRestaurantName.getText().toString();
-                restaurantLocale = etRestaurantLocale.getText().toString();
-                serverName = etServerName.getText().toString();
 
-                serverDB.insertRow(restaurantName,restaurantLocale,serverName);
-                populateListViewFromDB();
 
-                clearText();
+                restaurantName = etRestaurantName.getText().toString().trim();
+                restaurantLocale = etRestaurantLocale.getText().toString().trim();
+                serverName = etServerName.getText().toString().trim();
+
+                if(checkEmptyFields(restaurantName,restaurantLocale,serverName)== true) {
+                    serverDB.insertRow(restaurantName, restaurantLocale, serverName);
+                    populateListViewFromDB();
+                    clearText();
+                }
+
+
             }
         });
 
@@ -106,10 +113,7 @@ public class WaiterInfo extends ActionBarActivity{
 
     }
 
-//    public void resetTheDB(View view){
-//        serverDB.deleteAll();
-//        populateListViewFromDB();
-//    }
+
 
     private void clearText() {
         etRestaurantName.setText("");
@@ -125,6 +129,27 @@ public class WaiterInfo extends ActionBarActivity{
 
     private void closeDB() {
         serverDB.close();
+    }
+
+    public boolean checkEmptyFields(String restName,String restLocale, String serName){
+
+        if(restName.isEmpty() || restName == "" ){
+               Toast toast = Toast.makeText(getApplicationContext(),"Restaurant Name cannot be blank",Toast.LENGTH_LONG);
+                toast.show();
+                toast.setGravity(Gravity.CENTER,0,0);
+            return false;
+        }else if (restLocale.isEmpty() || restLocale == ""){
+            Toast toast = Toast.makeText(getApplicationContext(),"Restaurant location cannot be blank",Toast.LENGTH_LONG);
+            toast.show();
+            toast.setGravity(Gravity.CENTER,0,0);
+            return false;
+        }else if (serName.isEmpty() || serName == ""){
+            Toast toast = Toast.makeText(getApplicationContext(),"Server Name cannot be blank",Toast.LENGTH_LONG);
+            toast.show();
+            toast.setGravity(Gravity.CENTER,0,0);
+            return false;
+        }
+        return true;
     }
 
 }

@@ -145,6 +145,26 @@ public class DBAdapter {
         return c;
     }
 
+    //Return all resturant names for autocomplete
+    public String[] getAllResturantNames(){
+        Cursor cursor = this.db.query(DATABASE_TABLE,new String[]{KEY_RESTAURANT_NAME},null,
+                null,null,null,null);
+
+        if(cursor.getCount() > 0){
+
+            String[] str = new String[cursor.getCount()];
+            int i = 0;
+
+            while(cursor.moveToNext()){
+                str[i] = cursor.getString(cursor.getColumnIndex(KEY_RESTAURANT_NAME));
+                i++;
+            }
+            return str;
+        }else{
+            return  new String[]{};
+        }
+    }
+
     // Change an existing row to be equal to new data.
     public boolean updateRow(long rowId, String restName, String restLocale, String serverName) {
         String where = KEY_ROWID + "=" + rowId;
@@ -163,6 +183,8 @@ public class DBAdapter {
         // Insert it into the database.
         return db.update(DATABASE_TABLE, newValues, where, null) != 0;
     }
+
+
 
 
 
