@@ -15,6 +15,8 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 
 /**
  * Created by Gilbert Rodriguez on 6/24/2014.
@@ -54,16 +56,63 @@ public class WaiterInfo extends ActionBarActivity{
 
         openDB();
         populateListViewFromDB();
-        
-        createAutoPopulate();
+
+        createResturantAutoPopulate();
+        createLocationAutoPopulate();
 
     }
 
-    private void createAutoPopulate() {
-        String[] restaurantNames = serverDB.getAllResturantNames();
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.list_item,restaurantNames);
+    private void createResturantAutoPopulate() {
+        ArrayList<String> theListToPopulate = new ArrayList<String>();
+        String[] listNames = serverDB.getAllRestaurantNames();
+
+        for(int i = 0; i < listNames.length; i++){
+            boolean isDistinct = false;
+            for (int j = 0; j < i; j++){
+                if(listNames[i].equals(listNames[j])){
+                    System.out.println("Name in i = " + listNames[i]);
+                    System.out.println("Name in j = " + listNames[j]);
+                    isDistinct = true;
+                    break;
+                }
+            }
+            System.out.println("isDistinct = " + isDistinct);
+            if (!isDistinct){
+                theListToPopulate.add(listNames[i]);
+                System.out.println("Name in is not distinct = " + listNames[i]);
+            }
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.list_item,theListToPopulate);
         etRestaurantName.setAdapter(adapter);
     }
+
+    private void createLocationAutoPopulate(){
+        ArrayList<String> theListToPopulate = new ArrayList<String>();
+        String[] listNames = serverDB.getAllLocations();
+
+        for(int i = 0; i < listNames.length; i++){
+            boolean isDistinct = false;
+            for (int j = 0; j < i; j++){
+                if(listNames[i].equals(listNames[j])){
+                    System.out.println("Name in i = " + listNames[i]);
+                    System.out.println("Name in j = " + listNames[j]);
+                    isDistinct = true;
+                    break;
+                }
+            }
+            System.out.println("isDistinct = " + isDistinct);
+            if (!isDistinct){
+                theListToPopulate.add(listNames[i]);
+                System.out.println("Name in is not distinct = " + listNames[i]);
+            }
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.list_item,theListToPopulate);
+        etRestaurantLocale.setAdapter(adapter);
+    }
+
+
 
     private void populateListViewFromDB() {
         Cursor cursor = serverDB.getAllRows();
@@ -105,7 +154,8 @@ public class WaiterInfo extends ActionBarActivity{
                 if(checkEmptyFields(restaurantName,restaurantLocale,serverName)== true) {
                     serverDB.insertRow(restaurantName, restaurantLocale, serverName);
                     populateListViewFromDB();
-                    createAutoPopulate();
+                    createResturantAutoPopulate();
+                    createLocationAutoPopulate();
                     clearText();
                 }
 

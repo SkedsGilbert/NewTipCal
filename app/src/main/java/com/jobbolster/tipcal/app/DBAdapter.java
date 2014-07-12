@@ -148,7 +148,7 @@ public class DBAdapter {
     //
 
     //Return all resturant names for autocomplete
-    public String[] getAllResturantNames(){
+    public String[] getAllRestaurantNames(){
         Cursor cursor = this.db.query(DATABASE_TABLE,new String[]{KEY_RESTAURANT_NAME},null,
                 null,null,null,null);
 
@@ -158,7 +158,27 @@ public class DBAdapter {
             int i = 0;
 
             while(cursor.moveToNext()){
-                str[i] = cursor.getString(cursor.getColumnIndex(KEY_RESTAURANT_NAME));
+                    str[i] = cursor.getString(cursor.getColumnIndex(KEY_RESTAURANT_NAME));
+                    i++;
+               }
+            return str;
+        }else{
+            return  new String[]{};
+        }
+    }
+
+    //Return all location names
+    public String[] getAllLocations(){
+        Cursor cursor = this.db.query(DATABASE_TABLE,new String[]{KEY_RESTAURANT_LOCALE},null,
+                null,null,null,null);
+
+        if(cursor.getCount() > 0){
+
+            String[] str = new String[cursor.getCount()];
+            int i = 0;
+
+            while(cursor.moveToNext()){
+                str[i] = cursor.getString(cursor.getColumnIndex(KEY_RESTAURANT_LOCALE));
                 i++;
             }
             return str;
@@ -166,6 +186,7 @@ public class DBAdapter {
             return  new String[]{};
         }
     }
+
 
     // Change an existing row to be equal to new data.
     public boolean updateRow(long rowId, String restName, String restLocale, String serverName) {

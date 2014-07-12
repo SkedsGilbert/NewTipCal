@@ -36,7 +36,6 @@ public class MainActivity extends ActionBarActivity {
     TextView tvWaitressScoreNum;
 
     SeekBar sbAdjustTip;
-    Spinner spiNameSelector;
 
     Button bttnResetAll;
     Button bttnTest;
@@ -96,9 +95,7 @@ public class MainActivity extends ActionBarActivity {
             }catch (NumberFormatException nfe){
                 billBeforeTip = 0.00;
             }
-
             updateTipFinalBill();
-
         }
 
         @Override
@@ -147,28 +144,10 @@ public class MainActivity extends ActionBarActivity {
                 sbAdjustTip.setProgress(15);
                 tvWaitressScore.setVisibility(View.INVISIBLE);
                 tvWaitressScoreNum.setVisibility(View.INVISIBLE);
-                spiNameSelector.setSelection(0);
+//                spiNameSelector.setSelection(0);
             }
         });
 
-    }
-
-    private void spinnerSetup(){
-        spiNameSelector.setOnItemSelectedListener(new Spinner.OnItemSelectedListener(){
-
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if (spiNameSelector.getSelectedItem().equals("Jason Rodriguez")){
-                    tvWaitressScore.setVisibility(View.VISIBLE);
-                    tvWaitressScoreNum.setVisibility(View.VISIBLE);
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
     }
 
     public void startWaiterInfoActivity(View view){
