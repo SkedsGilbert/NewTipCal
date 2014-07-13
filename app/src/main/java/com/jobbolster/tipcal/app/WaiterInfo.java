@@ -95,16 +95,12 @@ public class WaiterInfo extends ActionBarActivity{
             boolean isDistinct = false;
             for (int j = 0; j < i; j++){
                 if(listNames[i].equals(listNames[j])){
-                    System.out.println("Name in i = " + listNames[i]);
-                    System.out.println("Name in j = " + listNames[j]);
                     isDistinct = true;
                     break;
                 }
             }
-            System.out.println("isDistinct = " + isDistinct);
             if (!isDistinct){
                 theListToPopulate.add(listNames[i]);
-                System.out.println("Name in is not distinct = " + listNames[i]);
             }
         }
 

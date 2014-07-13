@@ -24,7 +24,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/restaurantNameEditText"
             android:inputType="textCapWords"
-            android:layout_weight="0.70" />
+            android:layout_weight="0.70"
+            android:imeOptions="actionNext"/>
     </LinearLayout>
 
     <LinearLayout
@@ -45,7 +46,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/locationEditText"
             android:inputType="textCapWords"
-            android:layout_weight="3.01"/>
+            android:layout_weight="3.01"
+            android:imeOptions="actionNext"/>
 
     </LinearLayout>
 
@@ -67,7 +69,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/serverNameEditText"
             android:inputType="textCapWords"
-            android:layout_weight="5.70" />
+            android:layout_weight="5.70"
+            android:imeOptions="actionDone"/>
 
     </LinearLayout>
 
