@@ -37,7 +37,7 @@
     <string name="server_name">Server Name</string>
     <string name="add_server_bttn">Add Server</string>
     <string name="reset_DB">Reset DB</string>
-    <string name="pickRestaurant">Please pick a restuarant</string>
+    <string name="pickRestaurant">Please pick a restaurant</string>
     <string name="pickLocation">Pick a location</string>
     <string name="addServer">Add Server</string>
 
